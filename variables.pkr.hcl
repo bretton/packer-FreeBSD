@@ -1,8 +1,3 @@
-variable "arch" {
-  type    = string
-  default = "amd64"
-}
-
 variable "branch" {
   type    = string
   default = "-RELEASE"
@@ -36,11 +31,6 @@ variable "filesystem" {
 variable "git_commit" {
   type    = string
   default = ""
-}
-
-variable "guest_os_type" {
-  type    = string
-  default = "FreeBSD_64"
 }
 
 variable "memory" {

@@ -95,7 +95,6 @@ end
 Below is a sample `variables.pkrvars.hcl` file:
 
 ```hcl
-arch          = "amd64"
 branch        = "-RELEASE"
 build_date    = ""
 cpus          = 1
@@ -103,7 +102,6 @@ directory     = "releases"
 disk_size     = 10240
 filesystem    = "zfs"
 git_commit    = ""
-guest_os_type = "FreeBSD_64"
 memory        = 1024
 mirror        = "https://download.freebsd.org/ftp"
 rc_conf_file  = ""
@@ -136,14 +134,6 @@ The following variables can be set:
     | `-BETA1`, `-BETA2`, …   | `releases`  |
     | `-RC1`, `-RC2`, …       | `releases`  |
     | `-RELEASE`              | `releases`  |
-
--   `arch` is the target architecture (`i386` or `amd64`).  _Default:_
-    `amd64`
-
--   `guest_os_type` (VirtualBox) used in conjunction with `arch`
-    (`FreeBSD` or `FreeBSD_64`).  See [packer's
-    documentation](https://www.packer.io/docs/builders/virtualbox-iso.html#guest_os_type).
-    _Default:_ `FreeBSD_64`
 
 -   `filesystem` is the file system type (`ufs` or `zfs`).  _Default:_
     `zfs`
