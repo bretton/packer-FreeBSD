@@ -1,13 +1,11 @@
-if [ -e /dev/ada0 ]; then
-	GEOM=ada0 # VirtualBox
-else
-	GEOM=da0  # VMWare
-fi
+GEOM=da0
 
 if [ "$FILESYSTEM" = 'ufs' ]; then
 	PARTITIONS="$GEOM"
 else
+	export ZFSBOOT_BOOT_TYPE="UEFI"
 	export ZFSBOOT_DISKS="$GEOM"
+	export ZFSBOOT_PARTITION_SCHEME="GPT"
 	# export ZFSBOOT_POOL_CREATE_OPTIONS="-O compress=zstd -O atime=off"
 	export nonInteractive="YES"
 fi
