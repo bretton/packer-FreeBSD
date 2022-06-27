@@ -17,7 +17,7 @@ elif [ "$FILESYSTEM" = 'zfs' ]; then
     export ZFSBOOT_POOL_SIZE=22g
     export ZFSBOOT_SWAP_SIZE=2g
     export ZFSBOOT_VDEV_TYPE=stripe
-    export ZFSBOOT_POOL_CREATE_OPTIONS="-O compress=zstd -O atime=off -O autoexpand=off"
+    #export ZFSBOOT_POOL_CREATE_OPTIONS="-O compress=zstd -O atime=off"
     export nonInteractive="YES"
 fi
 
@@ -48,6 +48,9 @@ ASSUME_ALWAYS_YES=yes FETCH_RETRY=5 pkg install sed
 ASSUME_ALWAYS_YES=yes FETCH_RETRY=5 pkg install curl
 ASSUME_ALWAYS_YES=yes FETCH_RETRY=5 pkg install sudo
 ASSUME_ALWAYS_YES=yes FETCH_RETRY=5 pkg install bash
+
+# turn off zfs autoexpansion
+zpool set autoexpand=off zroot
 
 # mount ESP, copy loader
 mount_msdosfs /dev/da0p1 /mnt
