@@ -1,7 +1,7 @@
 {
   "variables": {
     "home": "{{env `HOME`}}",
-    "mychecksum": "90e228281994aa50ccdab1e0e6bcdce36a42a684"
+    "mychecksum": "db6bb53878c0947f1edbfe67dbd91f6e9f357d889493185f3cfaba13ce4b586a"
   },
   "builders": [
     {
