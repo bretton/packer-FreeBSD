@@ -11,6 +11,8 @@ Important: The default disk setup has prioritized for KVM, with format `32G`, ho
 
 `32G` seems to be the minimum for KVM machines, errors if set lower, won't boot. This is because qemu-img resize wipes the partition table. Don't worry, the exported images will be sparse and small now.
 
+Additionally, this branch uses a patched install cd, to allow for setting smaller-than-disk zfsroot partitions.
+
 `10240` (same as 10GB) is fine with Virtualbox.
 
 There are [official FreeBSD] VMs available from the Vagrant Cloud too.
