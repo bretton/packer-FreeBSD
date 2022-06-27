@@ -14,8 +14,10 @@ if [ "$FILESYSTEM" = 'ufs' ]; then
     PARTITIONS="$GEOM"
 elif [ "$FILESYSTEM" = 'zfs' ]; then
     export ZFSBOOT_DISKS="$GEOM"
+    export ZFSBOOT_POOL_SIZE=22g
+    export ZFSBOOT_SWAP_SIZE=2g
     export ZFSBOOT_VDEV_TYPE=stripe
-    # export ZFSBOOT_POOL_CREATE_OPTIONS="-O compress=zstd -O atime=off"
+    #export ZFSBOOT_POOL_CREATE_OPTIONS="-O compress=zstd -O atime=off"
     export nonInteractive="YES"
 fi
 
