@@ -20,5 +20,7 @@ rm -rf /var/log/*
 echo kern.racct.enable=1 >>/boot/loader.conf
 
 # Growfs on first boot
-service growfs enable
+#service growfs enable
+service growfs disable
+
 touch /firstboot
