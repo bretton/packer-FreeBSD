@@ -10,6 +10,6 @@
   "arch": "amd64",
   "guest_os_type": "FreeBSD_64",
   "filesystem": "zfs",
-  "mirror": "https://download.freebsd.org/ftp",
+  "mirror": "https://bsd.ephemeral.services/ftp",
   "rc_conf_file": ""
 }
