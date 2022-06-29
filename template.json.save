@@ -86,8 +86,6 @@
       "export FILESYSTEM<enter>",
       "RC_CONF_FILE={{ user `rc_conf_file` }}<enter>",
       "export RC_CONF_FILE<enter>",
-      "ZFSPARTSIZE={{ user `zfspartsize` }}<enter>",
-      "export ZFSPARTSIZE<enter>",
       "bsdinstall script /tmp/installerconfig<enter>"
     ],
     "boot_wait": "10s",
@@ -99,7 +97,7 @@
       "file://iso/FreeBSD-{{ user `revision` }}{{ user `branch` }}-{{ user `arch` }}{{ user `build_date` }}{{ user `git_commit` }}-disc1.iso",
       "{{ user `mirror` }}/{{ user `directory` }}/ISO-IMAGES/{{ user `revision` }}/FreeBSD-{{ user `revision` }}{{ user `branch` }}-{{ user `arch` }}{{ user `build_date` }}{{ user `git_commit` }}-disc1.iso"
     ],
-    "disk_compression": true,
+    "disk_compression": false,
     "disk_image": false,
     "use_backing_file": false,
     "shutdown_command": "poweroff",
@@ -133,10 +131,10 @@
       {
         "output": "builds/FreeBSD-{{ user `revision` }}{{ user `branch` }}-{{ user `arch` }}{{ user `build_date` }}{{ user `git_commit` }}.box",
         "type": "vagrant",
-        "compression_level": 9,
+        "compression_level": 0,
         "vagrantfile_template": "vagrantfile.tpl",
         "provider_override":  "libvirt",
-        "keep_input_artifact": false
+        "keep_input_artifact": true
       }
     ]
   ],

@@ -19,7 +19,7 @@ rm -rf /var/log/*
 # Enable resource limits
 echo kern.racct.enable=1 >>/boot/loader.conf
 
-#disable
+#disabled because we don't want to grow the zroot partition
 # Growfs on first boot
 #service growfs enable
 #service growfs disable

@@ -38,12 +38,13 @@ To create a box:
 
 2.  Configure your own `variables.json` from `variables.json.sample`
 
-        $ cp variables.json.sample variables.json
+        $ cp variables.json.kvm.sample variables.json
         $ vi variables.json
 
     If building for KVM, configure "disk_size" to 32G or higher. 40GB is default if unset.
 
         "disk_size": "32G",
+        "zfspartsize": "SET-ME-LESS-THAN-DISK-SIZE"   # e.g. 25G
 
     If building for Virtualbox, you will get an error with 32GB and need to replace with
 
