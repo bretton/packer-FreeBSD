@@ -14,7 +14,7 @@ if [ "$FILESYSTEM" = 'ufs' ]; then
     PARTITIONS="$GEOM"
 elif [ "$FILESYSTEM" = 'zfs' ]; then
     export ZFSBOOT_DISKS="$GEOM"
-    export ZFSBOOT_POOL_SIZE=22g
+    export ZFSBOOT_POOL_SIZE=23g
     export ZFSBOOT_SWAP_SIZE=2g
     export ZFSBOOT_VDEV_TYPE=stripe
     #export ZFSBOOT_POOL_CREATE_OPTIONS="-O compress=zstd -O atime=off"
@@ -51,22 +51,6 @@ ASSUME_ALWAYS_YES=yes FETCH_RETRY=5 pkg install bash
 
 # turn off zfs autoexpansion
 zpool set autoexpand=off zroot
-
-# mount ESP, copy loader
-mount_msdosfs /dev/da0p1 /mnt
-mkdir -p /mnt/EFI/BOOT
-cp /boot/loader.efi /mnt/EFI/BOOT/
-cp /boot/loader.efi /mnt/EFI/BOOT/BOOTX64.efi
-umount /mnt/mnt
-
-# /mnt/mnt is not a typo. ESP is mounted in chroot on
-# /mnt of the new system, which makes it /mnt/mnt outside
-# of chroot.
-
-# Create UEFI boot variable
-#efibootmgr -a -c -l da0p1:/efi/boot/loader.efi -L FreeBSD
-
-######
 
 # Disable X11
 echo 'OPTIONS_UNSET+=X11' >> /etc/make.conf
