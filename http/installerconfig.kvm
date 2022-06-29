@@ -52,6 +52,9 @@ ASSUME_ALWAYS_YES=yes FETCH_RETRY=5 pkg install bash
 # turn off zfs autoexpansion
 zpool set autoexpand=off zroot
 
+# create empty partition in remaining space
+gpart add -a 4096 -t freebsd-ufs da0
+
 # Disable X11
 echo 'OPTIONS_UNSET+=X11' >> /etc/make.conf
 
