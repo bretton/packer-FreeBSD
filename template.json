@@ -21,7 +21,7 @@
       ],
       "boot_wait": "10s",
       "cpus": "{{ user `cpus` }}",
-      "disk_size": "{{ user `disk_size` }}",
+      "disk_size": "10240",
       "export_opts": [
         "--manifest",
         "--vsys",
@@ -114,7 +114,7 @@
     "disk_detect_zeroes": "on",
     "disk_cache": "unsafe",
     "format": "qcow2",
-    "disk_size": "{{ user `disk_size` }}",
+    "disk_size": "32G",
     "output_directory": "freebsd-qemu",
     "type": "qemu",
     "qemuargs": [

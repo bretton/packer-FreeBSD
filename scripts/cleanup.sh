@@ -6,6 +6,7 @@ sed -i '' -e 's/^PermitRootLogin yes/#PermitRootLogin no/' /etc/ssh/sshd_config
 
 # Purge files we no longer need
 rm -rf /boot/kernel.old
+rm -f /etc/hostid
 rm -f /etc/ssh/ssh_host_*
 rm -f /root/*.iso
 rm -f /root/.vbox_version
@@ -19,7 +20,7 @@ rm -rf /var/log/*
 # Enable resource limits
 echo kern.racct.enable=1 >>/boot/loader.conf
 
-# disabling for now
+# disabling for now, interferes with rsized disks
 # Growfs on first boot
 #service growfs enable
 #touch /firstboot

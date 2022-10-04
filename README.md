@@ -63,7 +63,7 @@ To create a box:
     [Handling `.iso` and `.box` files](#handling-iso-and-box-files) for
     more information.
 
-        $ vagrant box add builds/FreeBSD-13.0-RELEASE-amd64.box --name FreeBSD-13.0-RELEASE-amd64
+        $ vagrant box add builds/FreeBSD-13.1-RELEASE-amd64.box --name FreeBSD-13.1-RELEASE-amd64
 
 Sample `Vagrantbox` file
 ------------------------
@@ -176,7 +176,7 @@ Below is a sample `variables.json.sample` file for KVM:
   "cpus": "1",
   "disk_size": "32G",
   "memory": "1024",
-  "revision": "13.0",
+  "revision": "13.1",
   "branch": "-RELEASE",
   "build_date": "",
   "git_commit": "",
@@ -184,7 +184,7 @@ Below is a sample `variables.json.sample` file for KVM:
   "arch": "amd64",
   "guest_os_type": "FreeBSD_64",
   "filesystem": "zfs",
-  "mirror": "https://download.freebsd.org/ftp",
+  "mirror": "https://download.freebsd.org",
   "rc_conf_file": ""
 }
 ```
@@ -228,7 +228,7 @@ The following variables can be set:
     `zfs`
 
 -   `mirror` is the preferred FreeBSD mirror.  _Default:_
-    `https://download.freebsd.org/ftp`
+    `https://download.freebsd.org`
 
 -   `rc_conf_file` is the file where `rc.conf` parameters are stored.
     _Default: empty_ .  Possible values are:
