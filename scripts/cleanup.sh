@@ -20,7 +20,7 @@ rm -rf /var/log/*
 # Enable resource limits
 echo kern.racct.enable=1 >>/boot/loader.conf
 
-# disabling for now, interferes with rsized disks
+# disabling for now, interferes with resized disks
 # Growfs on first boot
 #service growfs enable
 #touch /firstboot

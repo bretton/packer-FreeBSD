@@ -80,7 +80,8 @@ echo 'vagrant' | pw usermod root -h 0
 sysrc -f /boot/loader.conf autoboot_delay=-1
 
 # fix for vtnet and pot
-sysrc -f /boot/loader.conf hw.vtnet.lro_disable=1
+# removed again for testing
+# sysrc -f /boot/loader.conf hw.vtnet.lro_disable=1
 
 # Reboot
 shutdown -r now
